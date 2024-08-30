@@ -1,5 +1,24 @@
+import {
+  useBackButton,
+  useInitData,
+  useInitDataRaw,
+  useLaunchParams,
+} from "@telegram-apps/sdk-react";
+
 function App() {
-  return <h1>Testing telegram</h1>;
+  const initData = useInitData();
+  const initDataRaw = useInitDataRaw();
+  const param = useLaunchParams();
+  const token = param.initDataRaw;
+  console.log("user : ", initData?.user);
+
+  const backButton = useBackButton();
+
+  return (
+    <div>
+      <button onClick={() => backButton.show()}>back button</button>
+    </div>
+  );
 }
 
 export default App;
