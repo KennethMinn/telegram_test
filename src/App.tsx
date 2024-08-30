@@ -10,6 +10,7 @@ function App() {
   const initDataRaw = useInitDataRaw();
   const param = useLaunchParams();
   const token = param.initDataRaw;
+  console.log(initDataRaw, token);
   console.log("user : ", initData?.user);
 
   const backButton = useBackButton();
