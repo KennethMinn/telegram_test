@@ -1,5 +1,6 @@
 import {
   useBackButton,
+  useClosingBehavior,
   useInitData,
   useInitDataRaw,
   useLaunchParams,
@@ -14,7 +15,9 @@ function App() {
   console.log("user : ", initData?.user);
 
   const backButton = useBackButton();
+  const closingBehavior = useClosingBehavior();
 
+  closingBehavior.enableConfirmation();
   return (
     <div>
       <button onClick={() => backButton.show()}>back button</button>
